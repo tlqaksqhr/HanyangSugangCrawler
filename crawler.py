@@ -93,6 +93,7 @@ class LectureCrawler(HanyangCrawlerTemplate):
 
 	def _request_query(self,url,header={},payload={}):
 
+		# 1학기 : 10, 여름학기 : 15, 2학기 : 20, 겨울학기 : 25
 		request_list = [(2017,10),(2017,15),(2017,20),(2017,25),(2018,10)]
 		lecture_list = []
 
@@ -120,6 +121,7 @@ class LectureParser(AbstractParser):
 
 	def parse(self):
 		data = self.data
+		# 1학기 : 10, 여름학기 : 15, 2학기 : 20, 겨울학기 : 25
 		table = {"10" : "1", "15" : "2", "20" : "3", "25" : "4"}
 		course_name_buf_dict = {}
 
