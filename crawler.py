@@ -171,6 +171,7 @@ class LectureSaver(AbstractSaver):
 	
 	def save(self):
 		path = "hyu_course_info/"
+		os.mkdir("hyu_course_info")
 		data = self.data
 		for file_name in data:
 			name = path + file_name
